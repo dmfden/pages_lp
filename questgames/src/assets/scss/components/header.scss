@@ -1,0 +1,50 @@
+@import '../project-commons.scss';
+@import '../animations.scss';
+
+.landing-header {
+    @extend .general-paddings;
+    min-height: 60px;
+    background: rgba(33, 32, 32, 0.9);
+    display: grid;
+    grid-template-columns: 32px max-content;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include _breakpoint_md {
+        grid-template-columns: 42px 1fr auto;
+        gap: 32px;
+    }
+    @include _breakpoint_xl {
+        padding: 0 64px;
+    }
+    &__logo {
+        display: block;
+        width: 100%;
+    }
+    &__navigation {
+        display: none;
+        @include _breakpoint_md {
+            display: block;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+    }
+    &__navlink,
+    &__tellink {
+        font-size: 16px;
+        font-weight: 500;
+        color: $text-grey;
+        text-decoration: none;
+
+        &_active {
+            color: $text-gold;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+@import './colors.scss';
+
+$general-background: $black-100;
+$text-grey: $grey-400;
+$text-dark: $black-100;
+$text-gold: $yellow-100;
+$cta-background: $yellow-100;
+
+.general-paddings {
+    padding: 0 12px;
+    @include _breakpoint_md {
+        padding: 0 16px;
+    }
+    @include _breakpoint_xl {
+        padding: 0 64px;
+    }
+}
+
+.general-bottom-margin {
+    margin-bottom: 22px;
+    @include _breakpoint_md {
+        margin-bottom: 32px;
+    }
+}
+
+.margin-center {
+    margin: 0 auto;
+}
+

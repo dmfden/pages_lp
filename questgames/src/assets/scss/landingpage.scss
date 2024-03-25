@@ -1,0 +1,68 @@
+@import './project-commons.scss';
+@import './fonts.scss';
+@import './breakpoints.scss';
+
+.landing-quests {
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: $general-background;
+    background-image: url('../images/background-mb.jpg');
+    font: 400 1rem 'Poppins', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include _breakpoint_md {
+        background-image: url('../images/background.jpg');
+    }
+    &__cap-text {
+        color: $text-gold;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    &__title {
+        @extend .general-bottom-margin;
+        font-size: 58px;
+        font-weight: 800;
+        color: #fff;
+        padding-right: 6px;
+        line-height: 1;
+        @include _breakpoint_md {
+            font-size: 54px;
+        }
+        @include _breakpoint_xl {
+            font-size: 98px;
+        }
+    }
+    .landing-cta {
+        display: flex;
+        width: max-content;
+        padding: 8px 22px;
+        color: $text-dark;
+        background-color: $cta-background;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        &:hover {
+            filter: brightness(1.4);
+        }
+    }
+}
+.landing-footer {
+    min-height: 60px;
+    margin-top: auto;
+    @include _breakpoint_md {
+        min-height: 120px;
+    }
+}
+
+.landing-modal::backdrop {
+    background-image: linear-gradient(45deg, magenta, rebeccapurple, dodgerblue, green);
+    opacity: 0.75;
+}
+

@@ -1,0 +1,23 @@
+@import '../project-commons.scss';
+@import '../breakpoints.scss';
+
+.social-block {
+    padding-left: 12px;
+    &__link {
+        text-decoration: none;
+        color: $text-gold;
+        outline: none;
+        &:focus {
+            border: none;
+            border-bottom: 2px solid;
+        }
+    }
+    .ph {
+        font-size: 26px;
+        color: $text-gold;
+        @include _breakpoint_md {
+            font-size: 36px;
+        }
+    }
+}
+
