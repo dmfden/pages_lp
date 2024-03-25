@@ -1,4 +1,4 @@
-## Plans and Pricing
+## Quest Games Landing PAge
 
 Gulp, SCSS
 
