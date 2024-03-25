@@ -1,0 +1,51 @@
+@import '../project-commons.scss';
+@import '../animations.scss';
+
+.landing-filter {
+    margin: 0 auto;
+    width: max-content;
+    &__title {
+        @extend .general-bottom-margin;
+        color: white;
+        font-size: 56px;
+        font-weight: 700;
+    }
+    &__games {
+        display: flex;
+    }
+    &__button {
+        display: flex;
+        width: max-content;
+        padding: 8px 22px;
+        color: $text-grey;
+        background: rgba(217, 217, 217, 0.1);
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 2px solid #615e5c;
+        border-right: none;
+        &:hover {
+            background-color: $cta-background;
+            color: $text-dark;
+        }
+        &:last-child {
+            border-right: 1px solid #615e5c;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        &:first-child {
+            border-left: 1px solid #615e5c;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+        &_active {
+            background: $cta-background;
+            color: $text-dark;
+        }
+        &:focus {
+            outline-width: 6px;
+            outline-color: $cta-background;
+        }
+    }
+}
+

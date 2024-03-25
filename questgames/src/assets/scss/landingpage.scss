@@ -51,6 +51,12 @@
         &:hover {
             filter: brightness(1.4);
         }
+        &:focus {
+            filter: brightness(1.4);
+            outline-offset: 6px;
+            outline-width: 6px;
+            outline-color: $text-dark;
+        }
     }
 }
 .landing-footer {
