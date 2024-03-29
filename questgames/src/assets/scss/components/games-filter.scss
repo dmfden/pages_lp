@@ -2,16 +2,30 @@
 @import '../animations.scss';
 
 .landing-filter {
+    @extend .general-paddings;
     margin: 0 auto;
-    width: max-content;
+    width: 100%;
+    @include _breakpoint_md {
+        width: max-content;
+    }
+
     &__title {
         @extend .general-bottom-margin;
         color: white;
         font-size: 56px;
         font-weight: 700;
+        line-height: 1;
+        @include _breakpoint_md {
+            line-height: 1.2;
+        }
     }
     &__games {
         display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        @include _breakpoint_md {
+            gap: 0px;
+        }
     }
     &__button {
         display: flex;
@@ -24,6 +38,11 @@
         cursor: pointer;
         border: 2px solid #615e5c;
         border-right: none;
+        border-radius: 12px;
+
+        @include _breakpoint_md {
+            border-radius: 0;
+        }
         &:hover {
             background-color: $cta-background;
             color: $text-dark;

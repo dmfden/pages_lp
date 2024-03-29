@@ -1,20 +1,10 @@
 'use strict';
-/*
+const filter = document.querySelector('.landing-filter__games');
+const filtersButtons = filter.children;
+let selectedFilter = getSelectedFilter(filtersButtons);
+const gameCardsWrapper = document.querySelector('.game-cards');
+const gameCards = document.querySelectorAll('.game-tile');
 
-const dialog = document.querySelector('dialog');
-const showButton = document.querySelector('dialog + button');
-const closeButton = document.querySelector('dialog button');
-
-// "Show the dialog" button opens the dialog modally
-showButton.addEventListener('click', () => {
-    dialog.showModal();
-});
-
-// "Close" button closes the dialog
-closeButton.addEventListener('click', () => {
-    dialog.close();
-});
-*/
 function getSelectedFilter(filters) {
     for (const key of filters) {
         if (key.classList.contains('landing-filter__button_active')) {
@@ -23,9 +13,14 @@ function getSelectedFilter(filters) {
     }
 }
 
-const filter = document.querySelector('.landing-filter__games');
-const filtersButtons = filter.children;
-let selectedFilter = getSelectedFilter(filtersButtons);
+function filterCards(filter) {
+    if (filter === 'all') {
+        return gameCards;
+    }
+    const cardArray = Array.from(gameCards);
+    const resultFiltered = cardArray.filter((el) => el.dataset.filter === filter);
+    return resultFiltered;
+}
 
 filter.addEventListener('click', (event) => {
     const filterClicked = event.target.dataset.filter;
@@ -39,5 +34,11 @@ filter.addEventListener('click', (event) => {
     const activeButton = document.querySelector(`[data-filter=${filterClicked}]`);
     activeButton.classList.add('landing-filter__button_active');
     selectedFilter = getSelectedFilter(filtersButtons);
+
+    const filteredTiles = filterCards(filterClicked);
+    gameCardsWrapper.innerHTML = '';
+    if (filteredTiles.length > 0) {
+        filteredTiles.forEach((card) => gameCardsWrapper.append(card));
+    }
 });
 

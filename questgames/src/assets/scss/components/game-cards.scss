@@ -1,0 +1,58 @@
+.game-cards {
+    @extend .general-paddings;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 64px auto;
+    @include _breakpoint_md {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include _breakpoint_xl {
+        max-width: 80%;
+        margin: 120px auto;
+    }
+}
+
+.game-tile {
+    color: $text-primary;
+    background-color: red;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 'cardtile cardtile';
+
+    &__card-image {
+        width: 100%;
+        height: auto;
+        grid-area: cardtile;
+    }
+    &__content {
+        margin-bottom: 20px;
+        grid-area: cardtile;
+        padding: 0 12px;
+        place-self: end;
+        @include _breakpoint_md {
+            padding: 0 32px;
+        }
+    }
+    &__title {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        line-height: 1;
+    }
+    &__info {
+        display: flex;
+        gap: 12px;
+        justify-content: end;
+    }
+    &__property {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .ph {
+            font-size: 22px;
+        }
+    }
+}
+

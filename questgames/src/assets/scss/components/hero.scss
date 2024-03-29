@@ -110,6 +110,10 @@
         opacity: 0;
         grid-area: card-content;
         z-index: 1;
+        @include _breakpoint_md {
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
